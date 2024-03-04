@@ -23,8 +23,8 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
-          package-manager: npm
-          node-version: 18
+          package-manager: pnpm
+          # node-version: 18
         # con:
           # path: . # La ubicación raíz de tu proyecto de Astro dentro del repositorio. (opcional)
           # node-version: 20 # La versión específica de Node que debería usarse para construir tu sitio. Por defecto es 20. (opcional)
