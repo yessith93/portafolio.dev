@@ -8,5 +8,5 @@ const LIVE_URL = "https://yessith93.github.io/"
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   site: LIVE_URL,
-  base: '/portafolio.dev',
+  // base: '/portafolio.dev',
 })
