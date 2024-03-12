@@ -75,10 +75,8 @@ const THEMES = ["Light", "Dark", "System"]
     }
 
     const updateIcon = (themePreference:string) => {
-      document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-        if (element instanceof HTMLElement) {
+      document.querySelectorAll<HTMLElement>(".theme-toggle-icon").forEach((element) => {
           element.style.scale = element.id === themePreference ? "1" : "0"
-        }
       })
     }
 
@@ -113,7 +111,6 @@ const THEMES = ["Light", "Dark", "System"]
     document.querySelectorAll(".themes-menu-option").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target instanceof HTMLElement) {
-          const innerText = e.target.innerText;
           localStorage.setItem("theme", e?.target?.innerText.toLowerCase().trim())
           updateTheme()
         }
