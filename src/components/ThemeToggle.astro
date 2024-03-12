@@ -60,7 +60,7 @@ const THEMES = ["Light", "Dark", "System"]
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    let remove = null;
+    let remove: Function | null = null;
     const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
     const themesMenu = document.getElementById("themes-menu")
 
@@ -74,9 +74,11 @@ const THEMES = ["Light", "Dark", "System"]
         : "light"
     }
 
-    const updateIcon = (themePreference) => {
+    const updateIcon = (themePreference:string) => {
       document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-        element.style.scale = element.id === themePreference ? "1" : "0"
+        if (element instanceof HTMLElement) {
+          element.style.scale = element.id === themePreference ? "1" : "0"
+        }
       })
     }
 
