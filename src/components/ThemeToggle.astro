@@ -60,7 +60,7 @@ const THEMES = ["Light", "Dark", "System"]
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    let remove = null
+    let remove = null;
     const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
     const themesMenu = document.getElementById("themes-menu")
 
@@ -100,18 +100,21 @@ const THEMES = ["Light", "Dark", "System"]
 
     updateTheme()
 
-    document.addEventListener("click", () => themesMenu.classList.remove("open"))
+    document.addEventListener("click", () => themesMenu?.classList.remove("open"))
 
-    document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+    document.getElementById("theme-toggle-btn")?.addEventListener("click", (e) => {
       e.stopPropagation()
-      const isClosed = !themesMenu.classList.contains("open")
-      themesMenu.classList[isClosed ? "add" : "remove"]("open")
+      const isClosed = !themesMenu?.classList.contains("open")
+      themesMenu?.classList[isClosed ? "add" : "remove"]("open")
     })
 
     document.querySelectorAll(".themes-menu-option").forEach((element) => {
       element.addEventListener("click", (e) => {
-        localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
-        updateTheme()
+        if (e.target instanceof HTMLElement) {
+          const innerText = e.target.innerText;
+          localStorage.setItem("theme", e?.target?.innerText.toLowerCase().trim())
+          updateTheme()
+        }
       })
     })
   })
