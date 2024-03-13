@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
+import Mail from "./icons/Mail.astro"
 
 const navItems = [
 {
@@ -34,19 +35,27 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-xs  font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center md:text-sm"
+    class="flex px-3 text-xs flex-wrap font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center md:text-sm"
   >
     {
       navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
+          <a
+            class="relative px-2 py-2 w-max transition hover:text-yellow-500 dark:hover:text-yellow-400"
+            class:list={[{"md:block hidden": link.title=="Contacto"},{"block": link.title!="Contacto"}]}
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
       ))
     }
+    <a
+    class="relative block md:hidden px-2 py-2 w-max transition hover:text-yellow-500 dark:hover:text-yellow-400 "
+    aria-label={navItems[navItems.length-1].label}
+    href={navItems[navItems.length-1].url}
+  >
+    <Mail class="size-5 transition-all"/>
+  </a>
     <ThemeToggle />
   </nav>
 </header>
