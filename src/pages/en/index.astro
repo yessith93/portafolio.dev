@@ -1,13 +1,13 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Main from "../components/Main.astro"
+import Layout from "../../layouts/Layout.astro"
+import Main from "../../components/Main.astro"
 
-const sections = ["Experiencia laboral","Trabajos","Sobre mí"];
+const sections = ["Work Experience","Works","About me"]
 ---
 
 <Layout
   title="Porfolio de Miguel Almanza - Desarrollador y Programador Web "
   description="Contrata a Miguel Almanza para crear tu aplicación web. Desarrollador Web. Enfocado en crear aplicaciones únicas."
 >
-<Main sections={sections}/>
+  <Main sections={sections}/>
 </Layout>
