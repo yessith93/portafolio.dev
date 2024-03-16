@@ -4,6 +4,11 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Html from "./icons/Html.astro"
+import CSS from "./icons/Css.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import PHP from "./icons/Php.astro"
+import CodeIgniter from "./icons/CodeIgniter.astro"
 
 const TAGS = {
   NEXT: {
@@ -16,6 +21,32 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  PHP: {
+    name: "PhP",
+    class: "bg-black text-white",
+    icon: PHP,
+  },
+  CODEIGNITER: {
+    name: "CodeIgniter",
+    class: "bg-black text-white",
+    icon: CodeIgniter
+
+  }
 }
 const PROJECTS = [
   {
@@ -25,7 +56,7 @@ const PROJECTS = [
     link: "https://www.volvohomestore.cl/cotizar",
     github: "",
     image: "/projects/cotizador.webp",
-    tags: [],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.CODEIGNITER],
   },
   {
     title: "Pagina producto de los autos ofertados",
@@ -33,7 +64,7 @@ const PROJECTS = [
       "Desarrollo de los componentes utilizados en las páginas de productos de Mercedes-Benz en América Latina y otras marcas que tambien lo implementan",
     link: "https://www.mercedes-benz.com.uy/amg-sl",
     image: "/projects/modelo.webp",
-    tags: [],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.CODEIGNITER],
   },
   {
     title: "Pagina de inicio en Merdedes benz Colombia",
@@ -42,7 +73,7 @@ const PROJECTS = [
     link: "https://www.mercedes-benz.com.uy/pasajeros",
     github: "",
     image: "/projects/home.webp",
-    tags: [],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.CODEIGNITER],
   }
 ]
 ---
@@ -63,7 +94,7 @@ const PROJECTS = [
     </h3>
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row mb-2 gap-x-2">
-          {/*tags.map((tag) => (
+          {tags.map((tag) => (
             <li>
               <span
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
@@ -72,7 +103,7 @@ const PROJECTS = [
                 {tag.name}
               </span>
             </li>
-          ))*/}
+          ))}
         </ul>
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
