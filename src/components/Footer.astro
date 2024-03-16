@@ -1,31 +1,29 @@
 ---
 const currentYear = new Date().getFullYear()
+const info = {...Astro.props.info.footerInfo};
+const links = info.links
 ---
 
 <footer
-  class="opacity-80 m-4 px-4 sm:px-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="opacity-80 m-4 px-4 sm:px-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
   >
-    <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://www.linkedin.com/in/miguel-almanza/" class="hover:underline">Miguel Almanza</a>. Casi
-      todos los derechos reservados
-      <br>
-      Portafolio basado en proyectos de <a href="https://midu.dev/" class="hover:underline">midudev</a>
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+    <div
+      class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
     >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:almanza.m@outlook.com" class="hover:underline"
-          >Contacto</a
-        >
-      </li>
-    </ul>
-  </div>
-</footer>
+      <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90">
+        &copy; {currentYear}
+        <a href={info.linkedin} class="hover:underline">{info.author}</a>. {info.rights}
+        <br>
+        {info.portfolioSourceComment}<a href={info.portfolioSource} class="hover:underline">{info.potffolioSourceauthor}</a>
+      </span>
+      <ul
+        class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+      >
+        {links.map((link : any)  => (
+          <li>
+            <a href={link.url} class="hover:underline me-4 md:me-6">{link.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </footer>

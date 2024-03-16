@@ -8,9 +8,9 @@ import { ViewTransitions } from "astro:transitions"
 interface Props {
   title: string
   description: string
+  info : {}
 }
-
-const { description, title } = Astro.props
+const { description, title, info} = Astro.props
 ---
 
 <!doctype html>
@@ -32,9 +32,9 @@ const { description, title } = Astro.props
       dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
-    <Header />
+    <Header info={info}/>
     <slot />
-    <Footer />
+    <Footer info={info}/>
     <style is:global>
       :root {
         color-scheme: light dark;

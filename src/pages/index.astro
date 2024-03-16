@@ -2,12 +2,69 @@
 import Layout from "@/layouts/Layout.astro"
 import Main from "../components/Main.astro"
 
-const sections = ["Experiencia laboral","Trabajos","Sobre mí"];
+const sections = {
+  "workExperience": "Experiencia Laboral",
+  "works": "Trabajos",
+  "aboutMe": "Acerca de mí"
+};
+const pageInfo = {
+  title:"Porfolio de Miguel Almanza - Desarrollador y Programador Web ",
+  description:"Contrata a Miguel Almanza para crear tu aplicación web. Desarrollador Web. Enfocado en crear aplicaciones únicas."
+  }
+const infoLayout = {
+  navItems: [
+  {
+    "title": "Inicio",
+    "label": "home",
+    "url": "/#home"
+  },
+  {
+    "title": "Experiencia",
+    "label": "workExperience",
+    "url": "/#workExperience"
+  },
+  {
+    "title": "Trabajos",
+    "label": "works",
+    "url": "/#works"
+  },
+  {
+    "title": "Sobre mí",
+    "label": "aboutMe",
+    "url": "/#aboutMe"
+  },
+  
+  ],
+  mail:{
+    "title": "Contacto",
+    "label": "contact",
+    "url": "mailto:almanza.m@outlook.com"
+  },
+  footerInfo :{
+      author: "Miguel Almanza",
+      rights: "Casi todos los derechos reservados",
+      portfolioSource: "https://midu.dev/",
+      portfolioSourceComment:"Portafolio basado en proyectos de ",
+      potffolioSourceauthor:"Midudev",
+      linkedin :"https://www.linkedin.com/in/miguel-almanza/",
+      links: [
+        {
+          text: "Inicio",
+          url: "/#Home"
+        },
+        {
+          text: "Contacto",
+          url: "mailto:almanza.m@outlook.com"
+        }
+      ]
+    }
+};
 ---
 
 <Layout
-  title="Porfolio de Miguel Almanza - Desarrollador y Programador Web "
-  description="Contrata a Miguel Almanza para crear tu aplicación web. Desarrollador Web. Enfocado en crear aplicaciones únicas."
+  title={pageInfo.title}
+  description={pageInfo.description}
+  info={infoLayout}
 >
-<Main sections={sections}/>
+<Main sections={sections} />
 </Layout>

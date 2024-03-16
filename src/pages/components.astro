@@ -5,11 +5,41 @@ import SocialPill from "@/components/SocialPill.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 
 import Layout from "@/layouts/Layout.astro"
+const info = {
+  navItems: [
+  {
+    "title": "Inicio",
+    "label": "home",
+    "url": "/#home"
+  },
+  {
+    "title": "Experiencia",
+    "label": "workExperience",
+    "url": "/#workExperience"
+  },
+  {
+    "title": "Trabajos",
+    "label": "works",
+    "url": "/#works"
+  },
+  {
+    "title": "Sobre mí",
+    "label": "aboutMe",
+    "url": "/#aboutMe"
+  },
+  {
+    "title": "Contacto",
+    "label": "contact",
+    "url": "mailto:almanza.m@outlook.com"
+  }
+],
+};
 ---
 
 <Layout
   title="Design System porfolio.dev"
   description="El catálogo de componentes de nuestro porfolio"
+  info{info}
 >
   <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
     <article class="mb-10">

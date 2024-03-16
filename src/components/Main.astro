@@ -12,38 +12,38 @@ const sections = {...Astro.props.sections}
 ---
 
 <main class="px-4">
-    <SectionContainer id="inicio" class="py-16 md:py-36">
+    <SectionContainer id="home" class="py-16 md:py-36">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
     <div class="space-y-24">
-    <SectionContainer id="experiencia">
+    <SectionContainer id="workExperience">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <Briefcase class="size-8" />
-        {sections[0]}
+        {sections.workExperience}
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="trabajos">
+    <SectionContainer id="works">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <CodeIcon class="size-7" />
-        {sections[1]}
+        {sections.works}
       </h2>
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="aboutMe">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
       >
         <ProfileCheck class="size-8" />
-        {sections[2]}
+        {sections.aboutMe}
       </h2>
       <AboutMe />
     </SectionContainer>
