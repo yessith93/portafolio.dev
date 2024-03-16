@@ -1,6 +1,24 @@
 ---
 const currentYear = new Date().getFullYear()
-const info = {...Astro.props.info.footerInfo};
+// const info = {...Astro.props.info.footerInfo};
+const info = {
+      author: "Miguel Almanza",
+      rights: "Casi todos los derechos reservados",
+      portfolioSource: "https://midu.dev/",
+      portfolioSourceComment:"Portafolio basado en proyectos de ",
+      potffolioSourceauthor:"Midudev",
+      linkedin :"https://www.linkedin.com/in/miguel-almanza/",
+      links: [
+        {
+          text: "Inicio",
+          url: "/#Home"
+        },
+        {
+          text: "Contacto",
+          url: "mailto:almanza.m@outlook.com"
+        }
+      ]
+    }
 const links = info.links
 ---
 
