@@ -9,7 +9,13 @@ interface Project {
   image: string;
   title: string;
   description: string;
-  tags: string[];
+  tags: [
+    {
+      class :string
+      icon:any
+      name:string
+    }
+  ];
   link: string;
   linkLabel: string;
   github: string;
