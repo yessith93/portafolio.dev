@@ -1,27 +1,12 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
-  {
-    date: "Noviembre 2021 - Actualmente...",
-    title: "Backend Developer",
-    company: "Inchcape Digital",
-    description:
-      "Lider de equipo de desarrollo. Responsable de la gestión de la plataforma, componentes y herramientas utilizadas en la creación y desarrollo de sitios web, optimicé los tiempos de desarrollo del equipo mediante la implementación de nuevas estrategias.",
-    link: "https://www.inchcape.com/es-co/",
-  },
-  {
-    date: "Marzo 2021 - Noviembre 2021",
-    title: "freelance ",
-    company: "",
-    description:
-      "Responsable de la creación y desarrollo de múltiples sitios web para pequeñas empresas, adaptándolos según las necesidades de los clientes.",
-  },
-]
+const info = {...Astro.props.info}
+const EXPERIENCIE = info.experience
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCIE.map((experiencie:any) => (
       <li class="">
         <ExperienceItem {...experiencie} />
       </li>
