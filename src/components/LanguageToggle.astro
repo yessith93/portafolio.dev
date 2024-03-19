@@ -1,0 +1,42 @@
+---
+import SunIcon from "./icons/Sun.astro"
+import MoonIcon from "./icons/Moon.astro"
+import SystemIcon from "./icons/System.astro"
+const path = Astro.url.pathname 
+
+const opciones = [
+    {
+        value: "/",
+        texto: "Español",
+        selected:false
+    },
+    {
+        value: "/en/",
+        texto: "Inglés",
+        selected:false
+    }
+];
+if (path.startsWith("/en/")) {
+        opciones[1].selected = true;
+    } else if (path.startsWith("/")) {
+        opciones[0].selected = true;
+    }
+---
+<select id="language">
+    {opciones.map((opcion)=>(
+        <option value={opcion.value} selected={opcion.selected}>{opcion.texto}</option>
+    ))}
+</select>
+
+
+<style>
+    
+</style>
+
+<script is:inline> 
+document.addEventListener("astro:page-load", () => {
+    document.querySelector('#language').addEventListener('change',(e)=>{
+    window.location.pathname = e.currentTarget.value
+})
+})
+</script>
