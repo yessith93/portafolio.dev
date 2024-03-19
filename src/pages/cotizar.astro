@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+
+const info = {
+  navItems: [
+  {
+    "title": "Inicio",
+    "label": "home",
+    "url": "/#home"
+  },
+  {
+    "title": "Experiencia",
+    "label": "workExperience",
+    "url": "/#workExperience"
+  },
+  {
+    "title": "Trabajos",
+    "label": "works",
+    "url": "/#works"
+  },
+  {
+    "title": "Sobre mí",
+    "label": "aboutMe",
+    "url": "/#aboutMe"
+  }
+],
+  mail:{
+    "title": "Contacto",
+    "label": "contact",
+    "url": "mailto:almanza.m@outlook.com"
+  },
+  footerInfo :{
+      author: "Miguel Almanza",
+      rights: "Casi todos los derechos reservados",
+      portfolioSource: "https://midu.dev/",
+      portfolioSourceComment:"Portafolio basado en proyectos de ",
+      potffolioSourceauthor:"Midudev",
+      linkedin :"https://www.linkedin.com/in/miguel-almanza/",
+      links: [
+        {
+          text: "Inicio",
+          url: "/#Home"
+        },
+        {
+          text: "Contacto",
+          url: "mailto:almanza.m@outlook.com"
+        }
+      ]
+    },
+
+};
+---
+
+<Layout
+  title="Pagina cotizar"
+  description="pagina de cotizar"
+  info={info}
+>
+    <SectionContainer class="py-40 pb-32 flex flex-col gap-y-10">
+        <div>
+            <h1 class="text-6xl">Info Page Cotizar</h1>
+            <div class="py-5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. Integer imperdiet elementum porta. Mauris sollicitudin enim tempor suscipit aliquam. Pellentesque sollicitudin varius purus in sagittis. Suspendisse sodales semper purus. In vitae ipsum ex. Suspendisse sem felis, elementum vitae efficitur sit amet, blandit vitae purus. Sed ut accumsan nisi.</p>
+                <p class="py-3">Donec volutpat est facilisis aliquet sollicitudin. Donec egestas ornare arcu ac maximus. Ut id consectetur dolor. Duis iaculis mollis nibh. Nam pulvinar eleifend tortor, sit amet pellentesque nibh pellentesque in. Aenean quis velit nisl. Aliquam mollis, metus ut vehicula cursus, ligula odio gravida mi, et porttitor lorem nisi sit amet ligula. Maecenas consectetur magna tempus, consequat massa eget, vulputate eros. Morbi non vehicula felis.</p>
+            </div>
+            <div class="auto-rows-auto">
+              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+                  <div class="">
+                      <img src="/paso-1.webp" alt="paso 1" class="">
+                  </div>
+                  <div class="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
+                  </div>
+              </div>
+
+              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
+                </div>
+                <div class="">
+                    <img src="/paso-2.webp" alt="paso 1" class="">
+                </div>
+              </div>
+
+              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+                <div class="">
+                    <img src="/paso-3.webp" alt="paso 1" class="">
+                </div>
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
+                </div>
+              </div>
+
+              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
+                </div>
+                <div class="">
+                    <img src="/paso-4.webp" alt="paso 1" class="">
+                </div>
+              </div>
+
+              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+                <div class="">
+                    <img src="/paso-5.webp" alt="paso 1" class="">
+                </div>
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </SectionContainer>
+</Layout>
