@@ -2,33 +2,33 @@
 import SunIcon from "./icons/Sun.astro"
 import MoonIcon from "./icons/Moon.astro"
 import SystemIcon from "./icons/System.astro"
-const path = Astro.url.pathname 
+import { getRelativeLocaleUrl } from 'astro:i18n';
+let path = Astro.url.pathname 
+const info = {...Astro.props.info}
+const languages = info.languages
 
-const opciones = [
-    {
-        value: "/",
-        texto: "Español",
-        selected:false
-    },
-    {
-        value: "/en/",
-        texto: "Inglés",
-        selected:false
-    }
-];
-if (path.startsWith("/en/")) {
+function selectedDEfault (opciones: any){
+    if (path.startsWith("/en/")) {
         opciones[1].selected = true;
+        path = path.replace("/en","")
     } else if (path.startsWith("/")) {
         opciones[0].selected = true;
     }
+    return opciones
+}
+
 ---
-<select id="language">
-    {opciones.map((opcion)=>(
-        <option value={opcion.value} selected={opcion.selected}>{opcion.texto}</option>
-    ))}
-</select>
-
-
+{!!languages 
+?
+    <select id="language">
+        {selectedDEfault(languages).map((opcion:any)=>(
+            <option value={getRelativeLocaleUrl(opcion.value,path)} selected={opcion.selected}>{opcion.texto}</option>
+        ))}
+    </select>
+: 
+<>
+</>
+}
 <style>
     
 </style>

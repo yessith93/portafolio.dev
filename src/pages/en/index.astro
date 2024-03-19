@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout_en.astro";
 import Main from "../../components/Main.astro";
 import Html from "../../components/icons/Html.astro"
 import CSS from "../../components/icons/Css.astro"
@@ -51,54 +51,6 @@ const pageInfo = {
   title: "Miguel Almanza's Portfolio - Web Developer and Programmer",
   description:
     "Hire Miguel Almanza to build your web application. Web Developer. Focused on creating unique applications.",
-};
-const infoLayout = {
-  navItems: [
-    {
-      "title": "Home",
-      "label": "home",
-      "url": "#home"
-    },
-    {
-      "title": "Experience",
-      "label": "workExperience",
-      "url": "#workExperience"
-    },
-    {
-      "title": "Works",
-      "label": "works",
-      "url": "#works"
-    },
-    {
-      "title": "About Me",
-      "label": "aboutMe",
-      "url": "#aboutMe"
-    },
-  ],
-  mail :{
-    "title": "Contacto",
-    "label": "contact",
-    "url": "mailto:almanza.m@outlook.com"
-  },
-  footerInfo : {
-    author: "Miguel Almanza",
-    rights: "Almost all rights reserved",
-    portfolioSource: "https://midu.dev/",
-    portfolioSourceComment: "Portfolio based on projects by ",
-    potffolioSourceauthor: "Midudev",
-    linkedin: "https://www.linkedin.com/in/miguel-almanza/",
-    links: [
-      {
-        text: "Home",
-        url: "/en/#home"
-      },
-      {
-        text: "Contact",
-        url: "mailto:almanza.m@outlook.com"
-      }
-    ]
-  }
-
 };
 const info= {
   sections : {
@@ -191,7 +143,6 @@ const info= {
 <Layout
   title={pageInfo.title}
   description={pageInfo.description}
-  info={infoLayout}
 >
   <Main info={info}/>
 </Layout>
