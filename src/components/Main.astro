@@ -50,3 +50,32 @@ const info = {...Astro.props.info}
     </SectionContainer>
   </div>
   </main>
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const userLanguage = navigator.language || navigator.userLanguage;
+      const primaryLanguage = userLanguage.split('-')[0];
+      const supportedLanguages = ["es", "en"];
+      let selectedLanguage = supportedLanguages.includes(primaryLanguage) ? primaryLanguage : "en";
+      // Verificar si existe la variable selectedLanguage en localStorage
+      let storedLanguage = localStorage.getItem('selectedLanguage');
+      // Obtener el prefijo del idioma actual de la página
+      const currentPathname = window.location.pathname;
+      const pathLanguage = currentPathname.split('/')[1];
+
+      // Verificar si el idioma del usuario es diferente al prefijo del idioma actual de la página
+      if (((selectedLanguage==="es" && pathLanguage==="en")||(selectedLanguage==="en"&&pathLanguage!=="en")) && !storedLanguage) {
+        // Si es diferente, actualizar la URL de la página e incluir el prefijo del idioma del visitante
+        let newPathname = currentPathname;
+
+        if (selectedLanguage === 'es' && pathLanguage==="en") {
+          // Si el idioma seleccionado es "es" y la ruta actual tiene prefijo, eliminar el prefijo
+          newPathname = currentPathname.substring(3);
+        } else if (selectedLanguage === 'en' && (pathLanguage!=="en")) {
+          // Si el idioma seleccionado es "en" y la ruta actual no tiene prefijo, agregar el prefijo
+          newPathname = `/en${currentPathname}`;
+        } 
+        window.location.pathname = newPathname
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+      }
+    })
+  </script>

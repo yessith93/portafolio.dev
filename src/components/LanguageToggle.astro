@@ -22,7 +22,7 @@ function selectedDEfault (opciones: any){
 ?
     <select id="language">
         {selectedDEfault(languages).map((opcion:any)=>(
-            <option value={getRelativeLocaleUrl(opcion.value,path)} selected={opcion.selected}>{opcion.texto}</option>
+            <option value={getRelativeLocaleUrl(opcion.value,path)} data-cod={opcion.value} selected={opcion.selected}>{opcion.texto}</option>
         ))}
     </select>
 : 
@@ -36,7 +36,9 @@ function selectedDEfault (opciones: any){
 <script is:inline> 
 document.addEventListener("astro:page-load", () => {
     document.querySelector('#language').addEventListener('change',(e)=>{
-    window.location.pathname = e.currentTarget.value
-})
+        const selectedLanguage = e.currentTarget.selectedOptions[0].dataset.cod;
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+        window.location.pathname = e.currentTarget.value
+    })
 })
 </script>
