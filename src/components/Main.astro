@@ -57,7 +57,7 @@ const info = {...Astro.props.info}
       const supportedLanguages = ["es", "en"];
       let selectedLanguage = supportedLanguages.includes(primaryLanguage) ? primaryLanguage : "en";
       // Verificar si existe la variable selectedLanguage en localStorage
-      let storedLanguage = localStorage.getItem('selectedLanguage');
+      let storedLanguage = sessionStorage.getItem('selectedLanguage');
       // Obtener el prefijo del idioma actual de la página
       const currentPathname = window.location.pathname;
       const pathLanguage = currentPathname.split('/')[1];
@@ -75,7 +75,7 @@ const info = {...Astro.props.info}
           newPathname = `/en${currentPathname}`;
         } 
         window.location.pathname = newPathname
-        localStorage.setItem('selectedLanguage', selectedLanguage);
+        sessionStorage.setItem('selectedLanguage', selectedLanguage);
       }
     })
   </script>

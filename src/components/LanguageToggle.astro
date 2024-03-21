@@ -37,7 +37,7 @@ function selectedDEfault (opciones: any){
 document.addEventListener("astro:page-load", () => {
     document.querySelector('#language').addEventListener('change',(e)=>{
         const selectedLanguage = e.currentTarget.selectedOptions[0].dataset.cod;
-        localStorage.setItem('selectedLanguage', selectedLanguage);
+        sessionStorage.setItem('selectedLanguage', selectedLanguage);
         window.location.pathname = e.currentTarget.value
     })
 })
