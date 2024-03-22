@@ -1,0 +1,15 @@
+---
+const infoLeft = {...Astro.props.info}
+---
+<div class="auto-rows-auto">
+
+    <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
+      <div class="">
+        <p>{infoLeft.text}</p>
+      </div>
+      <div class="">
+        <img src={infoLeft.img} alt={infoLeft.textAlt} class="">
+      </div>
+    </div>
+
+</div>

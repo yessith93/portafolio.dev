@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import SectionContainer from "../components/SectionContainer.astro"
+import PasosCotizar from "../components/PasosCotizar.astro"
 
 const info = {
   navItems: [
@@ -64,52 +65,8 @@ const info = {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. Integer imperdiet elementum porta. Mauris sollicitudin enim tempor suscipit aliquam. Pellentesque sollicitudin varius purus in sagittis. Suspendisse sodales semper purus. In vitae ipsum ex. Suspendisse sem felis, elementum vitae efficitur sit amet, blandit vitae purus. Sed ut accumsan nisi.</p>
                 <p class="py-3">Donec volutpat est facilisis aliquet sollicitudin. Donec egestas ornare arcu ac maximus. Ut id consectetur dolor. Duis iaculis mollis nibh. Nam pulvinar eleifend tortor, sit amet pellentesque nibh pellentesque in. Aenean quis velit nisl. Aliquam mollis, metus ut vehicula cursus, ligula odio gravida mi, et porttitor lorem nisi sit amet ligula. Maecenas consectetur magna tempus, consequat massa eget, vulputate eros. Morbi non vehicula felis.</p>
             </div>
-            <div class="auto-rows-auto">
-              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
-                  <div class="">
-                      <img src="/paso-1.webp" alt="paso 1" class="">
-                  </div>
-                  <div class="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
-                  </div>
-              </div>
 
-              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
-                <div class="">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
-                </div>
-                <div class="">
-                    <img src="/paso-2.webp" alt="paso 1" class="">
-                </div>
-              </div>
-
-              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
-                <div class="">
-                    <img src="/paso-3.webp" alt="paso 1" class="">
-                </div>
-                <div class="">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
-                </div>
-              </div>
-
-              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
-                <div class="">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
-                </div>
-                <div class="">
-                    <img src="/paso-4.webp" alt="paso 1" class="">
-                </div>
-              </div>
-
-              <div class="container mx-auto md:grid md:grid-cols-2 gap-12 p-5 items-center">
-                <div class="">
-                    <img src="/paso-5.webp" alt="paso 1" class="">
-                </div>
-                <div class="">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. </p>
-                </div>
-              </div>
-            </div>
+            <PasosCotizar />
         </div>
     </SectionContainer>
 </Layout>

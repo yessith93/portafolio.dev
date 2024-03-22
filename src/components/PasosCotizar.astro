@@ -1,0 +1,38 @@
+---
+import PasosCotizarRight from "../components/PasosCotizarRight.astro"
+import PasosCotizarLeft from "../components/PasosCotizarLeft.astro"
+
+const infoPasos = {
+  img: "/paso-1.webp",
+  textAlt: "paso 1",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus."
+}
+const infoLeft = {
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. ",
+  img: "/paso-2.webp",
+  textAlt: "paso 2"
+}
+const infoPasos3 = {
+  img: "/paso-3.webp",
+  textAlt: "paso 3",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus."
+}
+const infoLeft4 = {
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus. ",
+  img: "/paso-4.webp",
+  textAlt: "paso 4"
+}
+const infoPasos5 = {
+  img: "/paso-5.webp",
+  textAlt: "paso 5",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis sem, luctus lobortis magna id, elementum ornare metus."
+}
+---
+
+<div class="auto-rows-auto">
+    <PasosCotizarRight info={infoPasos}/>
+    <PasosCotizarLeft  info={infoLeft}/>
+    <PasosCotizarRight info={infoPasos3}/>
+    <PasosCotizarLeft info={infoLeft4}/>
+    <PasosCotizarRight info={infoPasos5}/>
+</div>
