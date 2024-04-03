@@ -20,7 +20,7 @@ function selectedDEfault (opciones: any){
 ---
 {!!languages 
 ?
-    <select id="language">
+    <select id="language" class="bg-transparent">
         {selectedDEfault(languages).map((opcion:any)=>(
             <option value={getRelativeLocaleUrl(opcion.value,path)} data-cod={opcion.value} selected={opcion.selected}>{opcion.texto}</option>
         ))}
