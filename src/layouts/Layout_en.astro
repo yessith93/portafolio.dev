@@ -11,70 +11,69 @@ interface Props {
 }
 const info = {
   navItems: [
-  {
-    "title": "Inicio",
-    "label": "home",
-    "url": "/#home"
-  },
-  {
-    "title": "Experiencia",
-    "label": "workExperience",
-    "url": "/#workExperience"
-  },
-  {
-    "title": "Trabajos",
-    "label": "works",
-    "url": "/#works"
-  },
-  {
-    "title": "Sobre mí",
-    "label": "aboutMe",
-    "url": "/#aboutMe"
-  },
-  
+    {
+      "title": "Home",
+      "label": "home",
+      "url": "/en/#home"
+    },
+    {
+      "title": "Experience",
+      "label": "workExperience",
+      "url": "/en/#workExperience"
+    },
+    {
+      "title": "Works",
+      "label": "works",
+      "url": "/en/#works"
+    },
+    {
+      "title": "About Me",
+      "label": "aboutMe",
+      "url": "/en/#aboutMe"
+    },
   ],
-  mail:{
-    "title": "Contacto",
+  mail :{
+    "title": "Contact",
     "label": "contact",
     "url": "mailto:almanza.m@outlook.com"
   },
-  footerInfo :{
-      author: "Miguel Almanza",
-      rights: "Casi todos los derechos reservados",
-      portfolioSource: "https://midu.dev/",
-      portfolioSourceComment:"Portafolio basado en proyectos de ",
-      potffolioSourceauthor:"Midudev",
-      linkedin :"https://www.linkedin.com/in/miguel-almanza/",
-      links: [
-        {
-          text: "Inicio",
-          url: "/#Home"
-        },
-        {
-          text: "Contacto",
-          url: "mailto:almanza.m@outlook.com"
-        }
-      ],
+  footerInfo : {
+    author: "Miguel Almanza",
+    rights: "Almost all rights reserved",
+    portfolioSource: "https://midu.dev/",
+    portfolioSourceComment: "Portfolio based on projects by ",
+    potffolioSourceauthor: "Midudev",
+    linkedin: "https://www.linkedin.com/in/miguel-almanza/",
+    links: [
+      {
+        text: "Home",
+        url: "/en/#home"
+      },
+      {
+        text: "Contact",
+        url: "mailto:almanza.m@outlook.com"
+      }
+    ],
       languages : [
         {
             value: "es",
-            texto: "Español",
+            texto: "Espanish",
             selected:false
         },
         {
             value: "en",
-            texto: "Inglés",
+            texto: "English",
             selected:false
         }
       ]
-    }
-};
+  }
 
+};
 const { description, title} = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />

@@ -1,70 +1,152 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Main from "../components/Main.astro"
+import Html from "../components/icons/Html.astro"
+import CSS from "../components/icons/Css.astro"
+import JavaScript from "../components/icons/JavaScript.astro"
+import PHP from "../components/icons/Php.astro"
+import CodeIgniter from "../components/icons/CodeIgniter.astro"
+import NextJS from "../components/icons/NextJS.astro"
+import Tailwind from "../components/icons/Tailwind.astro"
 
-const sections = {
-  "workExperience": "Experiencia Laboral",
-  "works": "Trabajos",
-  "aboutMe": "Acerca de mí"
-};
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-black text-white",
+    icon: PHP,
+  },
+  CODEIGNITER: {
+    name: "CodeIgniter",
+    class: "bg-black text-white",
+    icon: CodeIgniter
+
+  }
+}
 const pageInfo = {
   title:"Porfolio de Miguel Almanza - Desarrollador y Programador Web ",
   description:"Contrata a Miguel Almanza para crear tu aplicación web. Desarrollador Web. Enfocado en crear aplicaciones únicas."
   }
-const infoLayout = {
-  navItems: [
+const info= {
+  sections : {
+    "workExperience": "Experiencia Laboral",
+    "works": "Trabajos",
+    "aboutMe": "Acerca de mí"
+  },
+  heroInfo:{
+  titulo: "Hey, soy Miguel Almanza",
+  parrafos:{
+    parrafoOne: "+2 años de experiencia. ",
+    strong: "Ingeniero de Sistemas ",
+    parrafoTwo: " de Barranquilla, Colombia enfocado en desarrollo y mantenimiento de aplicaciones web.",
+  },
+  linkedin: "https://linkedin.com/in/midudev",
+  imgSrc: "/miguel.webp",
+  personalImageAlt : "Miguel Almanza",
+  navEmail: "mailto:almanza.m@outlook.com",
+  navEmailText: "Contáctame",
+  navLinkedin: "https://linkedin.com/in/miguel-almanza/",
+  },
+  experience : [
   {
-    "title": "Inicio",
-    "label": "home",
-    "url": "/#home"
+    date: "Noviembre 2021 - Actualmente...",
+    title: "Backend Developer",
+    company: "Inchcape Digital",
+    description:
+      "Lider de equipo de desarrollo. Responsable de la gestión de la plataforma, componentes y herramientas utilizadas en la creación y desarrollo de sitios web, optimicé los tiempos de desarrollo del equipo mediante la implementación de nuevas estrategias.",
+    link: "https://www.inchcape.com/es-co/",
+    companyLinklabel:"Compañia"
   },
   {
-    "title": "Experiencia",
-    "label": "workExperience",
-    "url": "/#workExperience"
+    date: "Marzo 2021 - Noviembre 2021",
+    title: "freelance ",
+    company: "",
+    description:
+      "Responsable de la creación y desarrollo de múltiples sitios web para pequeñas empresas, adaptándolos según las necesidades de los clientes.",
   },
-  {
-    "title": "Trabajos",
-    "label": "works",
-    "url": "/#works"
-  },
-  {
-    "title": "Sobre mí",
-    "label": "aboutMe",
-    "url": "/#aboutMe"
-  },
-  
   ],
-  mail:{
-    "title": "Contacto",
-    "label": "contact",
-    "url": "mailto:almanza.m@outlook.com"
-  },
-  footerInfo :{
-      author: "Miguel Almanza",
-      rights: "Casi todos los derechos reservados",
-      portfolioSource: "https://midu.dev/",
-      portfolioSourceComment:"Portafolio basado en proyectos de ",
-      potffolioSourceauthor:"Midudev",
-      linkedin :"https://www.linkedin.com/in/miguel-almanza/",
-      links: [
-        {
-          text: "Inicio",
-          url: "/#Home"
-        },
-        {
-          text: "Contacto",
-          url: "mailto:almanza.m@outlook.com"
-        }
-      ]
+  projects:[
+    {
+      title: "Pagina de cotizacion de autos en Volvo",
+      description:
+        "Desarrollo completo del módulo de cotización y sus variantes para las demás marcas que lo implementan.",
+      link: "https://www.volvohomestore.cl/cotizar",
+      linkLabel:"ver",
+      github: "",
+      githubLabel:"code",
+      image: "/projects/cotizador.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.CODEIGNITER],
+    },
+    {
+      title: "Pagina producto de los autos ofertados",
+      description:
+        "Desarrollo de los componentes utilizados en las páginas de productos de Mercedes-Benz en América Latina y otras marcas que tambien lo implementan",
+      link: "https://www.mercedes-benz.com.uy/amg-sl",
+      linkLabel:"ver",
+      image: "/projects/modelo.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    },
+    {
+      title: "Pagina de inicio en Merdedes benz Colombia",
+      description:
+        "Desarrollo de todos los componentes utilizados en las páginas de inicio de Mercedes-Benz, DFSK, Hino y Volvo.",
+      link: "https://www.mercedes-benz.com.uy/pasajeros",
+      linkLabel:"ver",
+      github: "",
+      githubLabel:"code",
+      image: "/projects/home.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
     }
-};
+  ],
+  aboutMeInfo:{
+    paraforOne: {
+      parraOne: "Mi nombre es Miguel Yessith Almanza, aunque mis amigos me llaman Yessith. ",
+      stOne: "Mi viaje en la programación comenzó en el SENA en 2013, donde me enamoré de esta carrera.",
+      parraTwo: "Durante un año y medio, me destacé como uno de los mejores estudiantes del curso. Siempre me ha gustado ayudar a mis compañeros."
+    },
+    parrafoTwo: {
+      parraOne: "Sin embargo, debido a situaciones personales, no pude ejercer de inmediato y estuve alejado de la programación durante aproximadamente cinco años. ",
+      stOne: "Extrañaba mucho programar, así que decidí retomar mis estudios de ingeniería de sistemas en 2018.  ",
+      parraTwo: "Finalmente, me gradué como ingeniero en el 2021, ¡fue un día increíble!"
+    },
+    parrafoThree: {
+      parraOne: "Desde entonces, he estado programando nuevamente y adaptándome a las nuevas tecnologías que están en auge. ",
+      stOne: "En 2013, un profesor nos dijo que la programación era el futuro, y sigo creyendo firmemente en ello.",
+      parraTwo: "Para mí, la programación despierta esa parte de mí que disfruta resolver problemas y crear cosas."
+    },
+    img:"/miguel.webp",
+    personalImageAlt : "Miguel Almanza"
+ }
+}
 ---
 
 <Layout
   title={pageInfo.title}
   description={pageInfo.description}
-  info={infoLayout}
 >
-<Main sections={sections} />
+<Main info={info}/>
 </Layout>

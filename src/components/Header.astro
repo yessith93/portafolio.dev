@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 import Mail from "./icons/Mail.astro"
-import { getRelativeLocaleUrl } from 'astro:i18n';
+// import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const info = {...Astro.props.info}
 const navItems = info.navItems
@@ -18,7 +18,7 @@ const navItems = info.navItems
           <a
             class="relative px-2 py-2 w-max transition hover:text-yellow-500 dark:hover:text-yellow-400 block"
             aria-label={link.label}
-            href={getRelativeLocaleUrl('en', '/')+link.url}
+            href={link.url}
           >
             {link.title}
           </a>

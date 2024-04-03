@@ -8,12 +8,13 @@ import Projects from "../components/Projects.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
 
-const sections = {...Astro.props.sections}
----
+const sections = {...Astro.props.info.sections}
+const info = {...Astro.props.info}
 
+---
 <main class="px-4">
     <SectionContainer id="home" class="py-16 md:py-36">
-      <Hero>
+      <Hero info={info.heroInfo}>
       </slot>
     </Hero>
     </SectionContainer>
@@ -25,7 +26,7 @@ const sections = {...Astro.props.sections}
         <Briefcase class="size-8" />
         {sections.workExperience}
       </h2>
-      <Experience />
+      <Experience info={info}/>
     </SectionContainer>
 
     <SectionContainer id="works">
@@ -35,7 +36,7 @@ const sections = {...Astro.props.sections}
         <CodeIcon class="size-7" />
         {sections.works}
       </h2>
-      <Projects />
+      <Projects info={info}/>
     </SectionContainer>
 
     <SectionContainer id="aboutMe">
@@ -45,7 +46,36 @@ const sections = {...Astro.props.sections}
         <ProfileCheck class="size-8" />
         {sections.aboutMe}
       </h2>
-      <AboutMe />
+      <AboutMe info={info.aboutMeInfo}/>
     </SectionContainer>
   </div>
   </main>
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const userLanguage = navigator.language || navigator.userLanguage;
+      const primaryLanguage = userLanguage.split('-')[0];
+      const supportedLanguages = ["es", "en"];
+      let selectedLanguage = supportedLanguages.includes(primaryLanguage) ? primaryLanguage : "en";
+      // Verificar si existe la variable selectedLanguage en localStorage
+      let storedLanguage = sessionStorage.getItem('selectedLanguage');
+      // Obtener el prefijo del idioma actual de la página
+      const currentPathname = window.location.pathname;
+      const pathLanguage = currentPathname.split('/')[1];
+
+      // Verificar si el idioma del usuario es diferente al prefijo del idioma actual de la página
+      if (((selectedLanguage==="es" && pathLanguage==="en")||(selectedLanguage==="en"&&pathLanguage!=="en")) && !storedLanguage) {
+        // Si es diferente, actualizar la URL de la página e incluir el prefijo del idioma del visitante
+        let newPathname = currentPathname;
+
+        if (selectedLanguage === 'es' && pathLanguage==="en") {
+          // Si el idioma seleccionado es "es" y la ruta actual tiene prefijo, eliminar el prefijo
+          newPathname = currentPathname.substring(3);
+        } else if (selectedLanguage === 'en' && (pathLanguage!=="en")) {
+          // Si el idioma seleccionado es "en" y la ruta actual no tiene prefijo, agregar el prefijo
+          newPathname = `/en${currentPathname}`;
+        } 
+        window.location.pathname = newPathname
+        sessionStorage.setItem('selectedLanguage', selectedLanguage);
+      }
+    })
+  </script>

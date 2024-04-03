@@ -12,6 +12,10 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false
     },
-    locales: ["en", "es", "pt-br"]
+    locales: ["es",
+      {
+        path: "en",
+        codes: ["en", "en-US"]
+    }],
   },
 })

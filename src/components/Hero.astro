@@ -1,21 +1,9 @@
 ---
-const personalImageAlt = "Miguel Almanza"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
-const info = {
-  titulo: "Hey, soy Miguel Almanza",
-  parrafoOne: "+2 años de experiencia. ",
-  strong: "Ingeniero de Sistemas ",
-  parrafoTwo: " de Barranquilla, Colombia enfocado en desarrollo y mantenimiento de aplicaciones web.",
-  linkedin: "https://linkedin.com/in/midudev",
-  imgSrc: "/miguel.webp",
-  navEmail: "mailto:almanza.m@outlook.com",
-  navEmailText: "Contáctame",
-  navLinkedin: "https://linkedin.com/in/miguel-almanza/",
-  navLinkedinText: "LinkedIn"
-}
+const info = {...Astro.props.info}
 ---
 
 <div class="max-w-xl">
@@ -23,16 +11,16 @@ const info = {
     <img
       class="rounded-full shadow-lg size-16"
       src={info.imgSrc}
-      alt={personalImageAlt}
+      alt={info.personalImageAlt}
     />
-    <a
+    <!-- <a
       href={info.linkedin}
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <!-- <Badge>Disponible para trabajar</Badge> -->
-    </a>
+      <Badge>Disponible para trabajar</Badge>
+    </a> -->
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
@@ -42,9 +30,9 @@ const info = {
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    {info.parrafoOne}<strong
-      >{info.strong}</strong
-    >{info.parrafoTwo}
+    {info.parrafos.parrafoOne}<strong
+      >{info.parrafos.strong}</strong
+    >{info.parrafos.parrafoTwo}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href={info.navEmail}>
@@ -53,7 +41,7 @@ const info = {
     </SocialPill>
     <SocialPill href={info.navLinkedin}>
       <LinkedInIcon class="size-4" />
-      {info.navLinkedinText}
+      LinkedIn
     </SocialPill>
   </nav>
 </div>

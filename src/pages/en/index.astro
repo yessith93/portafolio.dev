@@ -1,71 +1,148 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout_en.astro";
 import Main from "../../components/Main.astro";
+import Html from "../../components/icons/Html.astro"
+import CSS from "../../components/icons/Css.astro"
+import JavaScript from "../../components/icons/JavaScript.astro"
+import PHP from "../../components/icons/Php.astro"
+import CodeIgniter from "../../components/icons/CodeIgniter.astro"
+import NextJS from "../../components/icons/NextJS.astro"
+import Tailwind from "../../components/icons/Tailwind.astro"
 
-const sections = {
-  workExperience: "Work Experience",
-  works: "Works",
-  aboutMe: "About Me",
-};
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-black text-white",
+    icon: PHP,
+  },
+  CODEIGNITER: {
+    name: "CodeIgniter",
+    class: "bg-black text-white",
+    icon: CodeIgniter
+
+  }
+}
 const pageInfo = {
   title: "Miguel Almanza's Portfolio - Web Developer and Programmer",
   description:
     "Hire Miguel Almanza to build your web application. Web Developer. Focused on creating unique applications.",
 };
-const infoLayout = {
-  navItems: [
-    {
-      "title": "Home",
-      "label": "home",
-      "url": "#home"
-    },
-    {
-      "title": "Experience",
-      "label": "workExperience",
-      "url": "#workExperience"
-    },
-    {
-      "title": "Works",
-      "label": "works",
-      "url": "#works"
-    },
-    {
-      "title": "About Me",
-      "label": "aboutMe",
-      "url": "#aboutMe"
-    },
-  ],
-  mail :{
-    "title": "Contacto",
-    "label": "contact",
-    "url": "mailto:almanza.m@outlook.com"
+const info= {
+  sections : {
+    workExperience: "Work Experience",
+    works: "Works",
+    aboutMe: "About Me",
   },
-  footerInfo : {
-    author: "Miguel Almanza",
-    rights: "Almost all rights reserved",
-    portfolioSource: "https://midu.dev/",
-    portfolioSourceComment: "Portfolio based on projects by ",
-    potffolioSourceauthor: "Midudev",
-    linkedin: "https://www.linkedin.com/in/miguel-almanza/",
-    links: [
-      {
-        text: "Home",
-        url: "/en/#home"
-      },
-      {
-        text: "Contact",
-        url: "mailto:almanza.m@outlook.com"
-      }
-    ]
+  heroInfo: {
+    titulo: "Hey, I'm Miguel Almanza",
+    parrafos: {
+      parrafoOne: "+2 years of experience. ",
+      strong: "Systems Engineer ",
+      parrafoTwo: "from Barranquilla, Colombia, focused on web application development and maintenance."
+    },
+    linkedin: "https://linkedin.com/in/midudev",
+    imgSrc: "/miguel.webp",
+    personalImageAlt: "Miguel Almanza",
+    navEmailText: "Contact me",
+    navLinkedin: "https://linkedin.com/in/miguel-almanza/"
+  },
+  experience: [
+    {
+      "date": "November 2021 - Present...",
+      "title": "Backend Developer",
+      "company": "Inchcape Digital",
+      "description": "Development team leader. Responsible for managing the platform, components, and tools used in website creation and development, I optimized the team's development time by implementing new strategies.",
+      "link": "https://www.inchcape.com/es-co/",
+      "companyLinklabel": "Company"
+    },
+    {
+      "date": "March 2021 - November 2021",
+      "title": "Freelance",
+      "company": "",
+      "description": "Responsible for creating and developing multiple websites for small businesses, adapting them according to the clients' needs."
+    }
+  ],
+  projects: [
+    {
+      "title": "Car Quote Page at Volvo",
+      "description": "Complete development of the quote module and its variants for other brands that implement it.",
+      "link": "https://www.volvohomestore.cl/cotizar",
+      "linkLabel": "View",
+      "github": "",
+      "githubLabel": "Code",
+      "image": "/projects/cotizador.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.CODEIGNITER],
+    },
+    {
+      "title": "Product Page for Offered Cars",
+      "description": "Development of the components used on the product pages of Mercedes-Benz in Latin America and other brands that also implement it.",
+      "link": "https://www.mercedes-benz.com.uy/amg-sl",
+      "linkLabel": "View",
+      "image": "/projects/modelo.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    },
+    {
+      "title": "Home Page at Mercedes-Benz Colombia",
+      "description": "Development of all components used on the home pages of Mercedes-Benz, DFSK, Hino, and Volvo.",
+      "link": "https://www.mercedes-benz.com.uy/pasajeros",
+      "linkLabel": "View",
+      "github": "",
+      "githubLabel": "Code",
+      "image": "/projects/home.webp",
+      tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    }
+  ],
+  aboutMeInfo: {
+    "paraforOne": {
+      "parraOne": "My name is Miguel Yessith Almanza, although my friends call me Yessith.",
+      "stOne": "My journey in programming began at SENA in 2013, where I fell in love with this career.",
+      "parraTwo": "For a year and a half, I stood out as one of the top students in the course. I have always enjoyed helping my classmates."
+    },
+    "parrafoTwo": {
+      "parraOne": "However, due to personal situations, I could not immediately practice and was away from programming for about five years.",
+      "stOne": "I missed programming a lot, so I decided to resume my systems engineering studies in 2018.",
+      "parraTwo": "Finally, I graduated as an engineer in 2021, it was an incredible day!"
+    },
+    "parrafoThree": {
+      "parraOne": "Since then, I have been programming again and adapting to the new technologies that are booming.",
+      "stOne": "In 2013, a teacher told us that programming was the future, and I still firmly believe in it.",
+      "parraTwo": "For me, programming awakens that part of me that enjoys solving problems and creating things."
+    },
+    "img": "/miguel.webp",
+    "personalImageAlt": "Miguel Almanza"
   }
 
-};
+}
 ---
 
 <Layout
   title={pageInfo.title}
   description={pageInfo.description}
-  info={infoLayout}
 >
-  <Main sections={sections} />
+  <Main info={info}/>
 </Layout>

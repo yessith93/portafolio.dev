@@ -1,22 +1,5 @@
 ---
- const personalImageAlt = "Miguel Almanza"
- const info = {
-    paraforOne: {
-      parraOne: "Mi nombre es Miguel Yessith Almanza, aunque mis amigos me llaman Yessith. ",
-      stOne: "Mi viaje en la programación comenzó en el SENA en 2013, donde me enamoré de esta carrera.",
-      parraTwo: "Durante un año y medio, me destacé como uno de los mejores estudiantes del curso. Siempre me ha gustado ayudar a mis compañeros."
-    },
-    parrafoTwo: {
-      parraOne: "Sin embargo, debido a situaciones personales, no pude ejercer de inmediato y estuve alejado de la programación durante aproximadamente cinco años. ",
-      stOne: "Extrañaba mucho programar, así que decidí retomar mis estudios de ingeniería de sistemas en 2018.  ",
-      parraTwo: "Finalmente, me gradué como ingeniero en el 2021, ¡fue un día increíble!"
-    },
-    parrafoThree: {
-      parraOne: "Desde entonces, he estado programando nuevamente y adaptándome a las nuevas tecnologías que están en auge. ",
-      stOne: "En 2013, un profesor nos dijo que la programación era el futuro, y sigo creyendo firmemente en ello.",
-      parraTwo: "Para mí, la programación despierta esa parte de mí que disfruta resolver problemas y crear cosas."
-    }
- }
+ const info = {...Astro.props.info}
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
@@ -42,7 +25,7 @@
     </p>
   </div>
 
-  <img width="200" height="200" src="/miguel.webp" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
+  <img width="200" height="200" src={info.img} alt={info.personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
 
 </article>
 

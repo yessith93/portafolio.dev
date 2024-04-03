@@ -1,0 +1,44 @@
+---
+import SunIcon from "./icons/Sun.astro"
+import MoonIcon from "./icons/Moon.astro"
+import SystemIcon from "./icons/System.astro"
+import { getRelativeLocaleUrl } from 'astro:i18n';
+let path = Astro.url.pathname 
+const info = {...Astro.props.info}
+const languages = info.languages
+
+function selectedDEfault (opciones: any){
+    if (path.startsWith("/en/")) {
+        opciones[1].selected = true;
+        path = path.replace("/en","")
+    } else if (path.startsWith("/")) {
+        opciones[0].selected = true;
+    }
+    return opciones
+}
+
+---
+{!!languages 
+?
+    <select id="language">
+        {selectedDEfault(languages).map((opcion:any)=>(
+            <option value={getRelativeLocaleUrl(opcion.value,path)} data-cod={opcion.value} selected={opcion.selected}>{opcion.texto}</option>
+        ))}
+    </select>
+: 
+<>
+</>
+}
+<style>
+    
+</style>
+
+<script is:inline> 
+document.addEventListener("astro:page-load", () => {
+    document.querySelector('#language').addEventListener('change',(e)=>{
+        const selectedLanguage = e.currentTarget.selectedOptions[0].dataset.cod;
+        sessionStorage.setItem('selectedLanguage', selectedLanguage);
+        window.location.pathname = e.currentTarget.value
+    })
+})
+</script>
