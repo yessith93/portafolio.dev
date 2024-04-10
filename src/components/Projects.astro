@@ -18,6 +18,8 @@ interface Project {
   ];
   link: string;
   linkLabel: string;
+  linkCotizar: string;
+  textCotizar: string;
   github: string;
   githubLabel: string;
 }
@@ -25,7 +27,7 @@ interface Project {
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image , title , description, tags, link, linkLabel, github,githubLabel }:Project) => (
+    PROJECTS.map(({ image , title , description, tags, link, linkLabel, github,githubLabel,linkCotizar, textCotizar }:Project) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
       <div class="w-full md:w-1/2"> 
         <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -64,6 +66,12 @@ interface Project {
                 {linkLabel}
               </LinkButton>
             )}
+            {linkCotizar && (
+              <LinkButton href={linkCotizar}>
+                <Link class="size-4" />
+                {textCotizar}
+              </LinkButton>
+            )}
           </footer>
         </div>
       </div>
@@ -71,6 +79,3 @@ interface Project {
     ))
   }
 </div>
-
-
-
